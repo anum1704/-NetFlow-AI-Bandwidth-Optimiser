@@ -39,8 +39,10 @@ app.add_middleware(
 )
 
 # Ensure required folders exist
-os.makedirs("uploads", exist_ok=True)
-os.makedirs("saved_models", exist_ok=True)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+os.makedirs(os.path.join(BASE_DIR, "uploads"), exist_ok=True)
+os.makedirs(os.path.join(BASE_DIR, "saved_models"), exist_ok=True)
 
 # Register API routes
 app.include_router(ingestion_router, prefix="/api/ingestion", tags=["1. PCAP Ingestion"])
@@ -53,8 +55,12 @@ app.include_router(rl_router, prefix="/api/rl", tags=["7. RL Agent"])
 # -----------------------------
 # Serve Frontend Dashboard
 # -----------------------------
+from fastapi.staticfiles import StaticFiles
 
-app.mount("/static", StaticFiles(directory="frontend"), name="frontend")
+frontend_path = os.path.join(BASE_DIR, "..", "frontend")
+
+if os.path.exists(frontend_path):
+    app.mount("/static", StaticFiles(directory=frontend_path), name="frontend")
 
 
 @app.get("/", tags=["Frontend"])
