@@ -12,11 +12,11 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 import os
 
-from routes.ingestion import router as ingestion_router
-from routes.training import router as training_router
-from routes.evaluation import router as evaluation_router
-from routes.prediction import router as prediction_router
-from routes.rl_agent import router as rl_router
+from backend.routes.ingestion import router as ingestion_router
+from backend.routes.training import router as training_router
+from backend.routes.evaluation import router as evaluation_router
+from backend.routes.prediction import router as prediction_router
+from backend.routes.rl_agent import router as rl_router
 
 
 app = FastAPI(
