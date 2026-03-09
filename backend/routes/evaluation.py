@@ -20,8 +20,8 @@ from sklearn.metrics import (
     accuracy_score, confusion_matrix, classification_report,
 )
 
-from utils.state import uploaded_files, model_artifact, evaluation_results
-from utils.pcap_parser import FEATURE_COLUMNS, _synthetic_fallback, parse_pcap
+from backend.utils.state import uploaded_files, model_artifact, evaluation_results
+from backend.utils.pcap_parser import FEATURE_COLUMNS, _synthetic_fallback, parse_pcap
 
 router = APIRouter()
 UPLOAD_DIR = "uploads"

@@ -14,8 +14,8 @@ from typing import List
 from fastapi import APIRouter, File, UploadFile, HTTPException
 from pydantic import BaseModel
 
-from utils.state import uploaded_files
-from utils.pcap_parser import parse_pcap, FEATURE_COLUMNS
+from backend.utils.state import uploaded_files
+from backend.utils.pcap_parser import parse_pcap, FEATURE_COLUMNS
 
 router = APIRouter()
 UPLOAD_DIR = "uploads"

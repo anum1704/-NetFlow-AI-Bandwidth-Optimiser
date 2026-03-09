@@ -32,8 +32,8 @@ from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 
-from utils.state import training_state, uploaded_files, model_artifact
-from utils.pcap_parser import FEATURE_COLUMNS, _synthetic_fallback
+from backend.utils.state import training_state, uploaded_files, model_artifact
+from backend.utils.pcap_parser import FEATURE_COLUMNS, _synthetic_fallback
 
 router = APIRouter()
 _stop_event = threading.Event()

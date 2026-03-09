@@ -21,8 +21,8 @@ from fastapi import APIRouter, HTTPException
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 
-from utils.state import uploaded_files, model_artifact
-from utils.pcap_parser import FEATURE_COLUMNS, _synthetic_fallback
+from backend.utils.state import uploaded_files, model_artifact
+from backend.utils.pcap_parser import FEATURE_COLUMNS, _synthetic_fallback
 
 router = APIRouter()
 _prediction_log: List[Dict[str, Any]] = []
